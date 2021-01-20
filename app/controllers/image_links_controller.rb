@@ -1,5 +1,6 @@
 class ImageLinksController < ApplicationController
   def index
+    @image_link = ImageLink.all.order(created_at: :desc)
   end
 
   def show
@@ -21,8 +22,8 @@ class ImageLinksController < ApplicationController
   end
 
   private
+
   def image_link_params
     params.require(:image_link).permit(:url)
   end
 end
-

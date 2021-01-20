@@ -1,0 +1,12 @@
+<h1>Image Sharer</h1>
+
+<div>
+<% @image_link.each do |image_link| %>
+  <%= image_tag(image_link.url, class: "gallery-image") %>
+<% end %>
+</div>
+
+<div>
+  <%= link_to "Add A New Image", new_image_link_path %>
+</div>
+
