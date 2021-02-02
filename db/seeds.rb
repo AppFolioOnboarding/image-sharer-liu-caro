@@ -34,4 +34,3 @@ image_link_list = [
 image_link_list.each do |url|
   ImageLink.create!(url: url)
 end
-

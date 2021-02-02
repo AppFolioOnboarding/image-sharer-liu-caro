@@ -2,8 +2,15 @@
 
 <div>
 <% @image_link.each do |image_link| %>
-  <%= image_tag(image_link.url, class: "gallery-image") %>
+    <%= link_to image_tag(image_link.url, class: "gallery-image"), image_link_path(image_link) %>
+  <p>Tags:
+    <%= image_link.tag_list.each do %>
+    <% end %>
+  </p>
 <% end %>
+
+
+
 </div>
 
 <div>

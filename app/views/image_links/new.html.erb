@@ -1,14 +1,15 @@
-<%= form_with model: @image_link do |form| %>
+<%= simple_form_for @image_link do |form| %>
   <div>
-    <%= form.label :url, 'Insert your image URL here:' %><br>
-    <%= form.text_area :url %><br>
-    <%= @image_link.errors.full_messages_for(:url).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
+    <%= form.input :url, label: 'Image URL' %><br>
+<!--    <%#= form.text_area :url %><br>-->
+    <%#= @image_link.errors.full_messages_for(:url).each do |message| %>
+<!--      <div><%#= message %></div>-->
+    <%# end %>
+    <%= form.input :tag_list %>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.button :submit %>
   </div>
 <% end %>
 
