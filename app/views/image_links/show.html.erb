@@ -1,1 +1,7 @@
 <img style='max-width:400px' src=<%=@image_link.url%> />
+<p>Tags:
+  <%= @image_link.tag_list%>
+</p>
+<div>
+  <%= link_to "Back", root_path %>
+</div>

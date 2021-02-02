@@ -16,6 +16,10 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+# Use acts-as-taggable-on for tagging functionality
+gem 'acts-as-taggable-on', '~> 7.0'
+# Use simple-form for easy form creation
+gem 'simple_form'
 
 gem 'webpacker', '~> 4'
 
