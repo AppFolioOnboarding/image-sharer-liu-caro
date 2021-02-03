@@ -1,10 +1,18 @@
 <h1>Image Sharer</h1>
 
+<p>
+  Filter by tags:
+  <% @tags.each do |tag| %>
+    <%= link_to tag, tagged_path(tag: tag) %>
+  <% end %>
+</p>
+
 <div>
 <% @image_link.each do |image_link| %>
     <%= link_to image_tag(image_link.url, class: "gallery-image"), image_link_path(image_link) %>
   <p>Tags:
-    <%= image_link.tag_list.each do %>
+    <% image_link.tag_list.each do |tag| %>
+      <%= link_to tag, tagged_path(tag: tag) %>
     <% end %>
   </p>
 <% end %>
