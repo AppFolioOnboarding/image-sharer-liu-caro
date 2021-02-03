@@ -1,5 +1,6 @@
 class ImageLinksController < ApplicationController
   def index
+    @tags = list_tags
     @image_link = ImageLink.all.order(created_at: :desc)
   end
 
@@ -21,9 +22,23 @@ class ImageLinksController < ApplicationController
     end
   end
 
+  def tagged
+    @tags = list_tags
+    if params[:tag].present? && @tags.include?(params[:tag])
+      @image_link = ImageLink.tagged_with(params[:tag])
+      render :index
+    else
+      redirect_to action: :index
+    end
+  end
+
   private
 
   def image_link_params
     params.require(:image_link).permit(:url, :tag_list)
+  end
+
+  def list_tags
+    ActsAsTaggableOn::Tag.all.map(&:name)
   end
 end
