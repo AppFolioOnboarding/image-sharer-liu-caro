@@ -32,6 +32,13 @@ class ImageLinksController < ApplicationController
     end
   end
 
+  def destroy
+    @image_link = ImageLink.find(params[:id])
+    @image_link.destroy
+
+    redirect_to action: :index
+  end
+
   private
 
   def image_link_params

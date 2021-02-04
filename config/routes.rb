@@ -4,5 +4,5 @@ Rails.application.routes.draw do
 
   get '/tagged', to: 'image_links#tagged'
 
-  resources :image_links, only: %i[index new create show]
+  resources :image_links, only: %i[index new create show destroy]
 end

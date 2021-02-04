@@ -2,6 +2,11 @@
 <p>Tags:
   <%= @image_link.tag_list%>
 </p>
+
+<div>
+  <%= button_to 'Delete image', @image_link, :method => 'delete', data: {:confirm => 'Are you sure?' } %>
+</div>
+
 <div>
   <%= link_to "Back", root_path %>
 </div>
